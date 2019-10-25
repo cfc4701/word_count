@@ -1,9 +1,11 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
+
 def home(request):
     # return HttpResponse('Hello')
     return render(request, 'home.html')
+
 
 def count(request):
     user_text = request.GET['text']
@@ -21,3 +23,7 @@ def count(request):
     return render(request, 'count.html',
                   {'count': total_count, 'text': user_text,
                    'dict': word_dict, 'sorted':sorted_dict})
+
+
+def about(request):
+    return render(request, 'about.html')
